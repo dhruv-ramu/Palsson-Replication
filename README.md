@@ -1,72 +1,125 @@
-# Phenotype Phase Plane Analysis
+# E. coli Metabolic Modeling: Phenotype Phase Plane Analysis
 
-This repository contains a Python script for performing phenotype phase plane analysis on metabolic models, specifically examining the relationship between substrate uptake and oxygen consumption in E. coli iJO1366.
+This repository contains computational biology analyses focusing on phenotype phase plane (PhPP) analysis of E. coli metabolism, including reproduction of published results from Edwards et al. 2001.
 
-## Overview
+## 📁 Project Structure
 
-Phenotype phase plane analysis is a powerful tool in metabolic engineering that helps understand how the growth rate of an organism changes as a function of two different substrate uptake rates. This analysis can reveal optimal growth conditions and metabolic trade-offs.
-
-## Files
-
-- `simple_phpp_analysis.py` - Main analysis script
-- `bigg_models/iJO1366.xml` - E. coli metabolic model (SBML format)
-- `glucose_simple_phpp.csv` - Results from glucose analysis (generated)
-- `acetate_simple_phpp.csv` - Results from acetate analysis (generated)
-- `glucose_simple_phpp.png` - Visualization plot for glucose (generated)
-- `acetate_simple_phpp.png` - Visualization plot for acetate (generated)
-
-## Requirements
-
-Install the required Python packages:
-
-```bash
-pip install cobra numpy pandas matplotlib
+```
+Palsson/
+├── scripts/                    # Python analysis scripts
+│   ├── edwards_2001_reproduction.py
+│   ├── simple_phpp_analysis.py
+│   └── bigg_download.py
+├── data/                       # Input data and notebooks
+│   └── GlucoseMinimalMedium.ipynb
+├── results/                    # Analysis results and visualizations
+│   ├── edwards_2001/          # Edwards et al. 2001 reproduction results
+│   └── simple_phpp/           # Basic PhPP analysis results
+├── reports/                    # Comprehensive analysis reports
+│   └── Edwards_2001_Reproduction_Report.md
+├── docs/                       # Additional documentation
+├── bigg_models/               # Metabolic model files
+│   ├── iJO1366.xml
+│   └── iJO1366.json
+├── environment.yml            # Conda environment specification
+└── README.md                  # This file
 ```
 
-## Usage
+## 🚀 Quick Start
 
-Run the analysis script:
-
+### 1. Environment Setup
 ```bash
-python simple_phpp_analysis.py
+# Create conda environment
+conda env create -f environment.yml
+conda activate palsson
+
+# Or install dependencies manually
+pip install cobra numpy pandas matplotlib scipy
 ```
 
-## What the Script Does
+### 2. Download Metabolic Model
+```bash
+python scripts/bigg_download.py
+```
 
-1. **Loads the metabolic model** from SBML file
-2. **Tests model growth capabilities** with basic constraints
-3. **Performs phenotype phase plane analysis** for glucose vs oxygen uptake
-4. **Performs phenotype phase plane analysis** for acetate vs oxygen uptake
-5. **Creates visualizations** showing growth rate as a function of substrate uptake
-6. **Saves results** to CSV and PNG files
+### 3. Run Basic Analysis
+```bash
+python scripts/simple_phpp_analysis.py
+```
 
-## Output
+### 4. Run Edwards et al. 2001 Reproduction
+```bash
+python scripts/edwards_2001_reproduction.py
+```
 
-The script generates:
+## 📊 Analyses Included
 
-- **Console output**: Summary statistics and growth information
-- **CSV files**: Raw data with substrate uptake, oxygen uptake, and growth rate
-- **PNG files**: Visualization of the phenotype phase planes
+### Simple Phenotype Phase Plane Analysis
+- **Purpose**: Demonstrate working PhPP analysis
+- **Substrates**: Glucose and acetate
+- **Output**: Growth rate vs substrate and oxygen uptake
+- **Results**: `results/simple_phpp/`
 
-## Key Results
+### Edwards et al. 2001 Reproduction
+- **Purpose**: Reproduce published phenotype phase plane analysis
+- **Reference**: [Edwards et al. 2001](https://pubmed.ncbi.nlm.nih.gov/11175725/)
+- **Substrates**: Acetate and succinate vs oxygen
+- **Comparison**: In silico vs experimental slopes
+- **Results**: `results/edwards_2001/`
+- **Report**: `reports/Edwards_2001_Reproduction_Report.md`
 
-The analysis reveals:
-- **Growth capabilities**: How well the model can grow on different substrates
-- **Optimal conditions**: The substrate and oxygen uptake rates that maximize growth
-- **Metabolic trade-offs**: How growth rate changes with different substrate combinations
+## 📈 Key Findings
 
-## Technical Details
+### Simple PhPP Analysis
+- ✅ **Successful growth** on glucose and acetate
+- ✅ **Clear phenotype phase planes** with growth gradients
+- ✅ **Working demonstration** of PhPP methodology
 
-The script uses:
-- **COBRApy**: For metabolic model manipulation and optimization
-- **NumPy**: For numerical computations
-- **Pandas**: For data handling and analysis
-- **Matplotlib**: For visualization
+### Edwards et al. 2001 Reproduction
+- ⚠️ **No growth achieved** with iJO1366 model under tested conditions
+- 📊 **Model version differences** identified as key factor
+- 🔍 **Comprehensive analysis** of reproducibility challenges
+- 📝 **Detailed documentation** of findings and limitations
 
-## Example Results
+## 📁 Directory Details
 
-The analysis shows that the iJO1366 model can achieve:
-- **Glucose growth**: Up to 0.899 1/h growth rate
-- **Acetate growth**: Up to 0.899 1/h growth rate
-- **176 data points** analyzed for each substrate
-- **Clear phenotype phase planes** showing optimal growth regions
+### `scripts/`
+Contains all Python analysis scripts:
+- `edwards_2001_reproduction.py` - Main reproduction script
+- `simple_phpp_analysis.py` - Basic PhPP analysis
+- `bigg_download.py` - Model download utility
+
+### `results/`
+Organized by analysis type:
+- `edwards_2001/` - Edwards et al. 2001 reproduction results
+- `simple_phpp/` - Basic PhPP analysis results
+
+### `reports/`
+Comprehensive analysis reports in Markdown format.
+
+### `data/`
+Input data, notebooks, and reference materials.
+
+## 🔬 Scientific Context
+
+This project explores:
+- **Phenotype Phase Plane Analysis**: How growth rate changes with substrate uptake
+- **Metabolic Modeling**: Constraint-based reconstruction and analysis
+- **Reproducibility**: Challenges in computational biology
+- **Model Validation**: Comparison with experimental data
+
+## 📚 References
+
+1. Edwards, J. S., Ibarra, R. U., & Palsson, B. O. (2001). In silico predictions of Escherichia coli metabolic capabilities are consistent with experimental data. *Nature Biotechnology*, 19(2), 125-130.
+
+2. Feist, A. M., et al. (2007). A genome-scale metabolic reconstruction for Escherichia coli K-12 MG1655. *Molecular Systems Biology*, 3(1), 121.
+
+3. Orth, J. D., et al. (2011). A comprehensive genome-scale reconstruction of Escherichia coli metabolism. *Molecular Systems Biology*, 7(1), 535.
+
+## 🤝 Contributing
+
+This is a research repository. For questions or contributions, please refer to the documentation in the `docs/` directory.
+
+## 📄 License
+
+This project is for research purposes. Please cite the original papers when using these analyses.
