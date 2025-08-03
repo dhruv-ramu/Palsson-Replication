@@ -1,0 +1,25 @@
+{
+  "random_search": {
+    "best_score": 0.6893779993057251,
+    "best_params": {
+      "hidden_dim": 152,
+      "num_layers": 4,
+      "num_heads": 4,
+      "dropout": 0.3161936654371452,
+      "learning_rate": 0.00213725889648929,
+      "weight_decay": 9.987775912632126e-05,
+      "batch_size": 40,
+      "classification_weight": 1.8897606981350652,
+      "regression_weight": 0.8145201026389306,
+      "stoichiometric_weight": 0.6231666048315126,
+      "optimizer": "adamw",
+      "scheduler": "step"
+    },
+    "n_trials": 10
+  },
+  "grid_search": {
+    "best_score": Infinity,
+    "best_params": null,
+    "n_trials": 0
+  }
+}

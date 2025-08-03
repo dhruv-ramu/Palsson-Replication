@@ -1,0 +1,38 @@
+[
+  {
+    "params": {
+      "hidden_dim": 126,
+      "num_layers": 2,
+      "num_heads": 7,
+      "dropout": 0.20287722919334797,
+      "learning_rate": 0.009420249642076512,
+      "weight_decay": 5.964461917518665e-05,
+      "batch_size": 27,
+      "classification_weight": 0.6767488403906787,
+      "regression_weight": 0.9016521937520984,
+      "stoichiometric_weight": 0.5056934058857397,
+      "optimizer": "adam",
+      "scheduler": "none"
+    },
+    "score": 1.442303967475891,
+    "trial_number": 5
+  },
+  {
+    "params": {
+      "hidden_dim": 152,
+      "num_layers": 4,
+      "num_heads": 4,
+      "dropout": 0.3161936654371452,
+      "learning_rate": 0.00213725889648929,
+      "weight_decay": 9.987775912632126e-05,
+      "batch_size": 40,
+      "classification_weight": 1.8897606981350652,
+      "regression_weight": 0.8145201026389306,
+      "stoichiometric_weight": 0.6231666048315126,
+      "optimizer": "adamw",
+      "scheduler": "step"
+    },
+    "score": 0.6893779993057251,
+    "trial_number": 9
+  }
+]

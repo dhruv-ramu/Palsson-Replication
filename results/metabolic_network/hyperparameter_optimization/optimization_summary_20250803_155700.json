@@ -1,0 +1,6 @@
+{
+  "best_params": null,
+  "best_score": Infinity,
+  "n_trials": 0,
+  "optimization_method": "grid_search"
+}
