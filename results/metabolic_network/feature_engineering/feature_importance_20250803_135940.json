@@ -1,0 +1,142 @@
+{
+  "node_type": {
+    "mutual_info": 0.6781434672789226,
+    "correlation": 1.0,
+    "combined_score": 1.6781434672789226
+  },
+  "has_formula": {
+    "mutual_info": 0.6780295201503899,
+    "correlation": 1.0,
+    "combined_score": 1.6780295201503899
+  },
+  "subsystem_encoded": {
+    "mutual_info": 0.6775737316362607,
+    "correlation": 1.0,
+    "combined_score": 1.6775737316362607
+  },
+  "upper_bound": {
+    "mutual_info": 0.6639920146100513,
+    "correlation": 0.9953091083873823,
+    "combined_score": 1.6593011229974337
+  },
+  "annotation_count": {
+    "mutual_info": 0.6779155730218589,
+    "correlation": 0.9229766853865835,
+    "combined_score": 1.6008922584084424
+  },
+  "formula_length": {
+    "mutual_info": 0.6781434672789226,
+    "correlation": 0.8959855509289708,
+    "combined_score": 1.5741290182078935
+  },
+  "total_metabolites": {
+    "mutual_info": 0.677218215837402,
+    "correlation": 0.6411155393175594,
+    "combined_score": 1.3183337551549614
+  },
+  "has_gene_rule": {
+    "mutual_info": 0.4245221042369165,
+    "correlation": 0.8093144487311129,
+    "combined_score": 1.2338365529680293
+  },
+  "product_count": {
+    "mutual_info": 0.46823708781302553,
+    "correlation": 0.7388572705845473,
+    "combined_score": 1.2070943583975728
+  },
+  "reactant_count": {
+    "mutual_info": 0.677332162965933,
+    "correlation": 0.45161340800587685,
+    "combined_score": 1.12894557097181
+  },
+  "charge": {
+    "mutual_info": 0.3340139596297318,
+    "correlation": 0.4350002118722513,
+    "combined_score": 0.7690141715019831
+  },
+  "compartment_encoded": {
+    "mutual_info": 0.17285096192423222,
+    "correlation": 0.5200794932465724,
+    "combined_score": 0.6929304551708046
+  },
+  "lower_bound": {
+    "mutual_info": 0.09187108100800323,
+    "correlation": 0.3435416075893718,
+    "combined_score": 0.43541268859737503
+  },
+  "reversible": {
+    "mutual_info": 0.08837107024414248,
+    "correlation": 0.344170420945812,
+    "combined_score": 0.4325414911899545
+  },
+  "metabolomics_lactose_minimal": {
+    "mutual_info": 0.01313786080528434,
+    "correlation": 0.0,
+    "combined_score": 0.01313786080528434
+  },
+  "genomics_knockout_effect": {
+    "mutual_info": 0.011158546125206392,
+    "correlation": 0.0,
+    "combined_score": 0.011158546125206392
+  },
+  "genomics_essentiality": {
+    "mutual_info": 0.008455705519808454,
+    "correlation": 0.0,
+    "combined_score": 0.008455705519808454
+  },
+  "proteomics_lactose_minimal": {
+    "mutual_info": 0.003634445282203025,
+    "correlation": 0.0,
+    "combined_score": 0.003634445282203025
+  },
+  "proteomics_acetate_minimal": {
+    "mutual_info": 0.002810275849306265,
+    "correlation": 0.0,
+    "combined_score": 0.002810275849306265
+  },
+  "proteomics_glucose_minimal": {
+    "mutual_info": 0.0024838245199845232,
+    "correlation": 0.0,
+    "combined_score": 0.0024838245199845232
+  },
+  "fluxomics_glucose_minimal": {
+    "mutual_info": 0.0010128130593907159,
+    "correlation": 0.0,
+    "combined_score": 0.0010128130593907159
+  },
+  "transcriptomics_glucose_minimal": {
+    "mutual_info": 0.0,
+    "correlation": 0.0,
+    "combined_score": 0.0
+  },
+  "transcriptomics_acetate_minimal": {
+    "mutual_info": 0.0,
+    "correlation": 0.0,
+    "combined_score": 0.0
+  },
+  "transcriptomics_lactose_minimal": {
+    "mutual_info": 0.0,
+    "correlation": 0.0,
+    "combined_score": 0.0
+  },
+  "metabolomics_glucose_minimal": {
+    "mutual_info": 0.0,
+    "correlation": 0.0,
+    "combined_score": 0.0
+  },
+  "metabolomics_acetate_minimal": {
+    "mutual_info": 0.0,
+    "correlation": 0.0,
+    "combined_score": 0.0
+  },
+  "fluxomics_acetate_minimal": {
+    "mutual_info": 0.0,
+    "correlation": 0.0,
+    "combined_score": 0.0
+  },
+  "fluxomics_lactose_minimal": {
+    "mutual_info": 0.0,
+    "correlation": 0.0,
+    "combined_score": 0.0
+  }
+}

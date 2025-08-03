@@ -1,0 +1,27 @@
+{
+  "HEX1": {
+    "min_flux": 0.0,
+    "max_flux": 7.2,
+    "variability": 7.2
+  },
+  "PFK": {
+    "min_flux": 0.0,
+    "max_flux": 5.14285714285714,
+    "variability": 5.14285714285714
+  },
+  "PYK": {
+    "min_flux": 0.0,
+    "max_flux": 13.0909090909091,
+    "variability": 13.0909090909091
+  },
+  "CS": {
+    "min_flux": 0.9261705853603943,
+    "max_flux": 1.08,
+    "variability": 0.15382941463960575
+  },
+  "MDH": {
+    "min_flux": -26.39607912821124,
+    "max_flux": 15.4285714285714,
+    "variability": 41.82465055678264
+  }
+}

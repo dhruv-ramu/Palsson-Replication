@@ -1,0 +1,107 @@
+{
+  "dataset_info": {
+    "name": "E. coli metabolomics synthetic data",
+    "source": "Literature-based synthetic data",
+    "conditions": [
+      "glucose_minimal",
+      "acetate_minimal",
+      "lactose_minimal"
+    ],
+    "date": "2025-01-01",
+    "description": "Synthetic metabolite concentration data based on literature patterns"
+  },
+  "data_format": {
+    "columns": [
+      "metabolite_id",
+      "metabolite_name",
+      "concentration",
+      "unit",
+      "condition",
+      "replicate"
+    ],
+    "concentration_unit": "\u03bcM",
+    "reference_condition": "glucose_minimal"
+  },
+  "metabolite_categories": {
+    "glycolysis": [
+      "glc__D_c",
+      "g6p_c",
+      "f6p_c",
+      "fdp_c",
+      "dhap_c",
+      "g3p_c",
+      "13dpg_c",
+      "3pg_c",
+      "2pg_c",
+      "pep_c",
+      "pyr_c"
+    ],
+    "tca_cycle": [
+      "accoa_c",
+      "cit_c",
+      "icit_c",
+      "akg_c",
+      "succoa_c",
+      "succ_c",
+      "fum_c",
+      "mal__L_c",
+      "oaa_c"
+    ],
+    "pentose_phosphate": [
+      "6pgc_c",
+      "ru5p__D_c",
+      "r5p_c",
+      "xu5p__D_c"
+    ],
+    "amino_acids": [
+      "ala__L_c",
+      "arg__L_c",
+      "asn__L_c",
+      "asp__L_c",
+      "cys__L_c",
+      "glu__L_c",
+      "gln__L_c",
+      "gly_c",
+      "his__L_c",
+      "ile__L_c",
+      "leu__L_c",
+      "lys__L_c",
+      "met__L_c",
+      "phe__L_c",
+      "pro__L_c",
+      "ser__L_c",
+      "thr__L_c",
+      "trp__L_c",
+      "tyr__L_c",
+      "val__L_c"
+    ],
+    "nucleotides": [
+      "amp_c",
+      "adp_c",
+      "atp_c",
+      "gmp_c",
+      "gdp_c",
+      "gtp_c",
+      "ump_c",
+      "udp_c",
+      "utp_c",
+      "cmp_c",
+      "cdp_c",
+      "ctp_c"
+    ],
+    "cofactors": [
+      "nad_c",
+      "nadh_c",
+      "nadp_c",
+      "nadph_c",
+      "fad_c",
+      "fadh2_c",
+      "coa_c"
+    ]
+  },
+  "references": [
+    "Bennett et al. 2009, Nature Chemical Biology",
+    "Ishii et al. 2007, PLoS One",
+    "Sauer et al. 2007, Nature Biotechnology"
+  ]
+}

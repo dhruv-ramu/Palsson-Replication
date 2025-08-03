@@ -1,0 +1,29 @@
+{
+  "dataset_info": {
+    "name": "E. coli transcriptomics synthetic data",
+    "source": "Literature-based synthetic data",
+    "conditions": [
+      "glucose_minimal",
+      "acetate_minimal",
+      "lactose_minimal"
+    ],
+    "date": "2025-01-01",
+    "description": "Synthetic gene expression data based on literature patterns"
+  },
+  "data_format": {
+    "columns": [
+      "gene_id",
+      "gene_name",
+      "expression_value",
+      "condition",
+      "replicate"
+    ],
+    "expression_unit": "log2_fold_change",
+    "reference_condition": "glucose_minimal"
+  },
+  "references": [
+    "Ishii et al. 2007, PLoS One",
+    "Covert et al. 2004, Nature",
+    "Salmon et al. 2005, J Bacteriol"
+  ]
+}

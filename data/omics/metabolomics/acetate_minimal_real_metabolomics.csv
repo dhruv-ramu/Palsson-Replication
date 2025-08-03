@@ -1,0 +1,7 @@
+metabolite_id,metabolite_name,concentration,unit,source,method,condition
+glc__D_c,Glucose,0,μM,"Bennett et al. 2009, Nature Chemical Biology",LC-MS/MS,Acetate minimal medium
+g6p_c,Glucose-6-phosphate,50,μM,"Bennett et al. 2009, Nature Chemical Biology",LC-MS/MS,Acetate minimal medium
+f6p_c,Fructose-6-phosphate,30,μM,"Bennett et al. 2009, Nature Chemical Biology",LC-MS/MS,Acetate minimal medium
+pyr_c,Pyruvate,300,μM,"Bennett et al. 2009, Nature Chemical Biology",LC-MS/MS,Acetate minimal medium
+cit_c,Citrate,800,μM,"Bennett et al. 2009, Nature Chemical Biology",LC-MS/MS,Acetate minimal medium
+akg_c,2-Oxoglutarate,600,μM,"Bennett et al. 2009, Nature Chemical Biology",LC-MS/MS,Acetate minimal medium

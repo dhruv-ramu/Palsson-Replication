@@ -1,0 +1,8 @@
+gene_id,gene_name,expression_value,source,method,condition
+b2415,glk,-1.2,"Ishii et al. 2007, PLoS One",Microarray,Acetate minimal medium
+b2416,pfkA,-1.5,"Ishii et al. 2007, PLoS One",Microarray,Acetate minimal medium
+b1854,pykF,-1.3,"Ishii et al. 2007, PLoS One",Microarray,Acetate minimal medium
+b0720,gltA,1.2,"Ishii et al. 2007, PLoS One",Microarray,Acetate minimal medium
+b1478,icdA,1.3,"Ishii et al. 2007, PLoS One",Microarray,Acetate minimal medium
+b0344,lacZ,-3.5,"Ishii et al. 2007, PLoS One",Microarray,Acetate minimal medium
+b2296,acs,2.1,"Ishii et al. 2007, PLoS One",Microarray,Acetate minimal medium

@@ -1,0 +1,70 @@
+{
+  "glucose_minimal": {
+    "source": "Emmerling et al. 2002, J Bacteriol",
+    "conditions": "Glucose minimal medium, aerobic",
+    "growth_rate": 0.85,
+    "fluxes": {
+      "HEX1": 8.5,
+      "PFK": 8.5,
+      "PYK": 8.5,
+      "CS": 2.1,
+      "ACONT": 2.1,
+      "ICDHyr": 1.8,
+      "AKGDH": 1.8,
+      "SUCOAS": 1.8,
+      "SUCDi": 1.8,
+      "FUM": 1.8,
+      "MDH": 1.8,
+      "G6PDH2r": 1.2,
+      "PGL": 1.2,
+      "GND": 1.2,
+      "PPC": 0.3,
+      "PPCK": 0.3,
+      "EX_glc__D_e": -8.5,
+      "EX_o2_e": -15.2,
+      "EX_co2_e": 12.8
+    }
+  },
+  "acetate_minimal": {
+    "source": "Nanchen et al. 2006, J Bacteriol",
+    "conditions": "Acetate minimal medium, aerobic",
+    "growth_rate": 0.42,
+    "fluxes": {
+      "CS": 1.8,
+      "ACONT": 1.8,
+      "ICL": 0.9,
+      "MALS": 0.9,
+      "MDH": 0.9,
+      "AKGDH": 0.9,
+      "SUCOAS": 0.9,
+      "SUCDi": 0.9,
+      "FUM": 0.9,
+      "EX_ac_e": -3.6,
+      "EX_o2_e": -8.1,
+      "EX_co2_e": 6.3
+    }
+  },
+  "lactose_minimal": {
+    "source": "Haverkorn van Rijsewijk et al. 2011, PLoS One",
+    "conditions": "Lactose minimal medium, aerobic",
+    "growth_rate": 0.35,
+    "fluxes": {
+      "LACZ": 0.7,
+      "LACY": 0.7,
+      "HEX1": 0.7,
+      "PFK": 0.7,
+      "PYK": 0.7,
+      "CS": 0.4,
+      "ACONT": 0.4,
+      "ICDHyr": 0.3,
+      "AKGDH": 0.3,
+      "SUCOAS": 0.3,
+      "SUCDi": 0.3,
+      "FUM": 0.3,
+      "MDH": 0.3,
+      "EX_lac__D_e": -0.7,
+      "EX_o2_e": -6.3,
+      "EX_co2_e": 5.6
+    }
+  }
+}

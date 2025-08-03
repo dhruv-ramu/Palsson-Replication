@@ -243,6 +243,4 @@ This project is for research purposes. Please cite the original papers when usin
 
 ---
 
-**Success Summary**: Achieved 100% growth in phenotype phase plane analysis, 79.3% accuracy in gene essentiality predictions, and revealed lactose metabolism is 28x more sensitive to enzyme constraints than glucose, demonstrating proficiency with constraint-based metabolic modeling and the ability to work with complex biological systems.
 
-**Portfolio Value**: This work provides excellent evidence of advanced computational biology skills, systematic analysis capabilities, and understanding of Palsson lab methodologies for graduate school or postdoctoral applications.

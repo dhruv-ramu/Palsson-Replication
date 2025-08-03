@@ -1,0 +1,12 @@
+{
+  "glucose": {
+    "unconstrained": 0.9823718127269766,
+    "constrained": 0.9571113142380295,
+    "reduction_percent": 2.5713785922690695
+  },
+  "lactose": {
+    "unconstrained": 1.4353054709062394,
+    "constrained": 0.391675229214835,
+    "reduction_percent": 72.71136791755315
+  }
+}

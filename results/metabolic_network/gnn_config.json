@@ -1,0 +1,14 @@
+{
+  "model_type": "MetabolicGNN",
+  "input_dim": 35,
+  "hidden_dim": 128,
+  "output_dim": 64,
+  "num_layers": 3,
+  "dropout": 0.2,
+  "use_attention": true,
+  "use_residual": true,
+  "num_nodes": 4388,
+  "num_edges": 10183,
+  "node_features": 35,
+  "edge_features": 16
+}

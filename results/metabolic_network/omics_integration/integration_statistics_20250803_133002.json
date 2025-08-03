@@ -1,0 +1,35 @@
+{
+  "total_nodes": 4388,
+  "node_types": {
+    "0": 1805,
+    "1": 2583
+  },
+  "omics_coverage": {
+    "transcriptomics": 0,
+    "metabolomics": 82,
+    "fluxomics": 0,
+    "proteomics": 27,
+    "genomics": 0
+  },
+  "feature_counts": {
+    "annotation_count": 1805,
+    "charge": 1805,
+    "compartment_encoded": 1805,
+    "formula_length": 1805,
+    "has_formula": 1805,
+    "has_gene_rule": 2583,
+    "lower_bound": 2583,
+    "metabolomics_acetate_minimal": 82,
+    "metabolomics_glucose_minimal": 82,
+    "metabolomics_lactose_minimal": 82,
+    "node_type": 4388,
+    "product_count": 2583,
+    "proteomics_proteome_constrained_flux_data": 27,
+    "proteomics_proteome_constrained_fva_results": 25,
+    "reactant_count": 2583,
+    "reversible": 2583,
+    "subsystem_encoded": 2583,
+    "total_metabolites": 2583,
+    "upper_bound": 2583
+  }
+}

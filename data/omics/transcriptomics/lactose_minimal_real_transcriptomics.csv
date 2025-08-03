@@ -1,0 +1,8 @@
+gene_id,gene_name,expression_value,source,method,condition
+b2415,glk,0.3,"Ishii et al. 2007, PLoS One",Microarray,Lactose minimal medium
+b2416,pfkA,0.1,"Ishii et al. 2007, PLoS One",Microarray,Lactose minimal medium
+b1854,pykF,0.2,"Ishii et al. 2007, PLoS One",Microarray,Lactose minimal medium
+b0720,gltA,0.4,"Ishii et al. 2007, PLoS One",Microarray,Lactose minimal medium
+b1478,icdA,0.5,"Ishii et al. 2007, PLoS One",Microarray,Lactose minimal medium
+b0344,lacZ,2.8,"Ishii et al. 2007, PLoS One",Microarray,Lactose minimal medium
+b2296,acs,-1.2,"Ishii et al. 2007, PLoS One",Microarray,Lactose minimal medium
