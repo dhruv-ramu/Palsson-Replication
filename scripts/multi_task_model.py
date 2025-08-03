@@ -248,6 +248,25 @@ class MultiTaskMetabolicNetwork(nn.Module):
         
         return predictions
     
+    def get_embeddings(self, 
+                      x: torch.Tensor,
+                      edge_index: torch.Tensor,
+                      batch: Optional[torch.Tensor] = None) -> torch.Tensor:
+        """
+        Get node embeddings from the GNN encoder.
+        
+        Args:
+            x: Node features
+            edge_index: Edge indices
+            batch: Batch assignment (optional)
+            
+        Returns:
+            Node embeddings
+        """
+        # Get embeddings from GNN encoder
+        embeddings = self.gnn_encoder.get_embeddings(x, edge_index, batch)
+        return embeddings
+    
     def _global_pool(self, x: torch.Tensor, batch: torch.Tensor) -> torch.Tensor:
         """Global pooling for graph-level tasks."""
         from torch_geometric.nn import global_mean_pool

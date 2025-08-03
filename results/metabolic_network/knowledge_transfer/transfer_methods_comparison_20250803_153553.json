@@ -1,0 +1,14 @@
+{
+  "distillation": {
+    "best_loss": 0.20772045850753784,
+    "final_loss": 0.20772045850753784
+  },
+  "feature_alignment": {
+    "best_loss": 0.8116257190704346,
+    "final_loss": 0.8116257190704346
+  },
+  "progressive_transfer": {
+    "best_loss": 0.20916973054409027,
+    "final_loss": 0.6017225384712219
+  }
+}

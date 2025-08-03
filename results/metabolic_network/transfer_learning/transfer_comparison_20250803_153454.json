@@ -1,0 +1,14 @@
+{
+  "pretraining": {
+    "best_loss": 0.5162544250488281,
+    "final_loss": 0.5176382660865784
+  },
+  "acetate_finetuning": {
+    "best_loss": 0.7116708755493164,
+    "final_loss": 0.7116708755493164
+  },
+  "lactose_finetuning": {
+    "best_loss": 0.5645638108253479,
+    "final_loss": 0.5645638108253479
+  }
+}
