@@ -23,6 +23,13 @@ Contains results from the dynamic FBA (dFBA) diauxic growth simulation:
 - **Analysis**: Comparison with Mahadevan et al. 2002 benchmarks (86.2% agreement)
 - **Key results**: Glucose depletion at 5.15h, lag phase 1.30h, lactose start at 6.45h
 
+### Proteome-Constrained Analysis
+Contains results from proteome-constrained metabolic modeling:
+- **Data files**: Growth comparisons, flux data, and FVA results in JSON format
+- **Visualizations**: 4-panel analysis showing growth comparisons, constraint impacts, and flux variability
+- **Analysis**: Enzyme allocation constraints following GECKO framework (Sánchez et al. 2017)
+- **Key results**: Lactose metabolism 28x more sensitive to constraints than glucose
+
 ## File Naming Convention
 
 ### Phenotype Phase Plane Analysis
@@ -35,6 +42,16 @@ Contains results from the dynamic FBA (dFBA) diauxic growth simulation:
 - **Visualizations**: `dynamic_fba_diauxic_growth_{version}.png`
 - **Analysis files**: `dynamic_fba_analysis_{version}.json`
 - **Versions**: `fixed` (primary), `improved`, `final`, `initial`
+
+### Proteome-Constrained Analysis
+- **Data files**: `proteome_constrained_growth_comparison.json`, `proteome_constrained_flux_data.json`, `proteome_constrained_fva_results.json`
+- **Visualizations**: `proteome_constrained_analysis.png`
+- **Analysis**: Enzyme allocation constraints with k_cat values
+
+### Proteome-Constrained Analysis
+- **Data files**: `proteome_constrained_{type}.json`
+- **Visualizations**: `proteome_constrained_analysis.png`
+- **Types**: `growth_comparison`, `flux_data`, `fva_results`
 
 ## Data Format
 
@@ -63,6 +80,12 @@ Contains analysis metrics:
 - `lactose_phase_growth`: Average lactose phase growth rate (1/h)
 - `final_biomass`: Final biomass concentration (g/L)
 
+### Proteome-Constrained JSON Files
+Contains analysis results:
+- **Growth comparison**: Unconstrained vs constrained growth rates
+- **Flux data**: Key reaction fluxes under enzyme constraints
+- **FVA results**: Flux variability analysis with min/max fluxes
+
 ## Key Results Summary
 
 ### Edwards et al. 2001 Reproduction
@@ -76,6 +99,12 @@ Contains analysis metrics:
 - **Regulatory behavior**: Glucose repression, lactose operon induction
 - **Final biomass**: 1.748 g/L (175-fold increase)
 
+### Proteome-Constrained Analysis
+- **Lactose metabolism 28x more sensitive** to enzyme constraints than glucose
+- **Growth reductions**: Glucose 2.6%, Lactose 72.7%
+- **Enzyme bottlenecks**: CS and MDH at 100% capacity
+- **Metabolic flexibility**: Glycolysis more flexible than TCA cycle
+
 ## Usage
 
 Results can be used for:
@@ -84,4 +113,6 @@ Results can be used for:
 - Validation of metabolic models
 - Educational purposes
 - Dynamic metabolic modeling research
-- Regulatory network analysis 
+- Regulatory network analysis
+- Proteome-constrained metabolic modeling
+- Enzyme allocation analysis 

@@ -9,6 +9,7 @@ Palsson/
 ├── scripts/                    # Python analysis scripts
 │   ├── edwards_2001_final_solution.py  # ✅ Edwards et al. 2001 reproduction
 │   ├── gene_essentiality_analysis.py   # ✅ Orth et al. 2011 gene essentiality
+│   ├── proteome_constrained_analysis.py # ✅ Proteome-constrained modeling
 │   ├── simple_phpp_analysis.py         # ✅ Basic PhPP analysis
 │   └── bigg_download.py                # ✅ Model download utility
 ├── data/                       # Input data and notebooks
@@ -20,10 +21,12 @@ Palsson/
 │   │   ├── succinate_o2_final.csv
 │   │   └── succinate_o2_final.png
 │   ├── gene_essentiality/     # ✅ Orth et al. 2011 gene essentiality results
+│   ├── proteome_constrained/  # ✅ Proteome-constrained analysis results
 │   └── simple_phpp/           # ✅ Basic PhPP analysis results
 ├── reports/                    # Comprehensive analysis reports
 │   ├── Edwards_2001_Final_Report.md      # ✅ Detailed Edwards reproduction
-│   └── Gene_Essentiality_Analysis_Report.md  # ✅ Gene essentiality analysis
+│   ├── Gene_Essentiality_Analysis_Report.md  # ✅ Gene essentiality analysis
+│   └── Proteome_Constrained_Analysis_Report.md  # ✅ Proteome-constrained analysis
 ├── docs/                       # Additional documentation
 │   └── palsson_lab_application_strategy.md  # ✅ Application strategy guide
 ├── bigg_models/               # Metabolic model files
@@ -60,7 +63,12 @@ python scripts/edwards_2001_final_solution.py
 python scripts/gene_essentiality_analysis.py
 ```
 
-### 5. Run Basic Analysis
+### 5. Run Proteome-Constrained Analysis
+```bash
+python scripts/proteome_constrained_analysis.py
+```
+
+### 6. Run Basic Analysis
 ```bash
 python scripts/simple_phpp_analysis.py
 ```
@@ -78,6 +86,12 @@ python scripts/simple_phpp_analysis.py
 - **Performance Metrics:** 79.3% accuracy vs. experimental data
 - **Essential Genes:** 289 genes identified as essential (21.1%)
 - **Advanced Features:** Flux variability analysis for compensatory pathways
+
+### ✅ **Proteome-Constrained Metabolic Analysis**
+- **Enzyme Constraints:** 6 key enzymes with k_cat values from literature
+- **Constraint Sensitivity:** Lactose metabolism 28x more sensitive than glucose
+- **Growth Impact:** Glucose 2.6% reduction, Lactose 72.7% reduction
+- **Biological Insights:** Molecular basis for diauxic growth revealed
 
 ## 📈 Detailed Results
 
@@ -115,6 +129,24 @@ python scripts/simple_phpp_analysis.py
 2. **b2914** - Growth drop: 0.647934 1/h (65.9% reduction)
 3. **b3735** - Growth drop: 0.579895 1/h (59.0% reduction)
 
+### Proteome-Constrained Analysis: Enzyme Allocation Impact
+
+**Growth Rate Comparison:**
+| Substrate | Unconstrained (1/h) | Constrained (1/h) | Reduction (%) |
+|-----------|-------------------|-----------------|---------------|
+| **Glucose** | 0.982 | 0.957 | **2.6%** |
+| **Lactose** | 1.435 | 0.392 | **72.7%** |
+
+**Key Enzyme Bottlenecks:**
+- **CS (Citrate synthase):** Operating at 100% capacity (1.08 mmol/gDW/h)
+- **MDH (Malate dehydrogenase):** Operating at 100% capacity (15.43 mmol/gDW/h)
+- **HEX1 (Hexokinase):** Operating at 42% capacity (3.02 mmol/gDW/h)
+
+**Biological Significance:**
+- **Lactose metabolism is 28x more sensitive** to enzyme constraints than glucose
+- **Enzyme efficiency differences** explain diauxic growth patterns
+- **Proteome limitations** drive metabolic decision-making
+
 ## 🔍 Key Insights
 
 ### 1. **✅ Methodology Successfully Reproduced**
@@ -132,6 +164,8 @@ python scripts/simple_phpp_analysis.py
    - Demonstrates constraint sensitivity in metabolic modeling
    - Provides insights into computational biology reproducibility
    - Reveals metabolic network robustness and compensatory pathways
+   - **Proteome constraints explain** molecular basis of diauxic growth
+   - **Enzyme allocation trade-offs** drive metabolic decision-making
 
 ## 📁 Directory Details
 
@@ -139,6 +173,7 @@ python scripts/simple_phpp_analysis.py
 Contains the final working reproduction scripts:
 - `edwards_2001_final_solution.py` - Complete Edwards et al. 2001 reproduction
 - `gene_essentiality_analysis.py` - Complete Orth et al. 2011 gene essentiality analysis
+- `proteome_constrained_analysis.py` - Proteome-constrained metabolic modeling
 - `simple_phpp_analysis.py` - Basic phenotype phase plane analysis
 - `bigg_download.py` - Model download utility
 
@@ -146,12 +181,14 @@ Contains the final working reproduction scripts:
 Organized by analysis type:
 - `edwards_2001/` - Final Edwards et al. 2001 reproduction results
 - `gene_essentiality/` - Orth et al. 2011 gene essentiality analysis results
+- `proteome_constrained/` - Proteome-constrained metabolic analysis results
 - `simple_phpp/` - Basic phenotype phase plane analysis results
 
 ### `reports/`
 Comprehensive analysis reports:
 - `Edwards_2001_Final_Report.md` - Detailed Edwards reproduction with literature comparison
 - `Gene_Essentiality_Analysis_Report.md` - Comprehensive gene essentiality analysis
+- `Proteome_Constrained_Analysis_Report.md` - Proteome-constrained metabolic analysis
 
 ### `data/`
 Input data and reference materials.
@@ -161,6 +198,7 @@ Input data and reference materials.
 This project demonstrates:
 - **Phenotype Phase Plane Analysis**: How growth rate changes with substrate uptake
 - **Gene Essentiality Analysis**: Systematic mapping of gene-to-phenotype relationships
+- **Proteome-Constrained Modeling**: Enzyme allocation constraints and metabolic trade-offs
 - **Constraint-based Metabolic Modeling**: Using COBRApy for metabolic analysis
 - **Reproducibility**: Challenges and solutions in computational biology
 - **Model Validation**: Comparison with published results
@@ -172,6 +210,8 @@ This project demonstrates:
 2. Orth, J. D., et al. (2011). A comprehensive genome-scale reconstruction of Escherichia coli metabolism. *Molecular Systems Biology*, 7(1), 535.
 
 3. Feist, A. M., et al. (2007). A genome-scale metabolic reconstruction for Escherichia coli K-12 MG1655. *Molecular Systems Biology*, 3(1), 121.
+
+4. Sánchez, B. J., et al. (2017). Improving the phenotype predictions of a genome-scale metabolic model by incorporating enzymatic constraints. *Nature Communications*, 8, 16056.
 
 ## 🎯 Technical Achievements
 
@@ -203,6 +243,6 @@ This project is for research purposes. Please cite the original papers when usin
 
 ---
 
-**Success Summary**: Achieved 100% growth in phenotype phase plane analysis and 79.3% accuracy in gene essentiality predictions, demonstrating proficiency with constraint-based metabolic modeling and the ability to work with complex biological systems.
+**Success Summary**: Achieved 100% growth in phenotype phase plane analysis, 79.3% accuracy in gene essentiality predictions, and revealed lactose metabolism is 28x more sensitive to enzyme constraints than glucose, demonstrating proficiency with constraint-based metabolic modeling and the ability to work with complex biological systems.
 
 **Portfolio Value**: This work provides excellent evidence of advanced computational biology skills, systematic analysis capabilities, and understanding of Palsson lab methodologies for graduate school or postdoctoral applications.
