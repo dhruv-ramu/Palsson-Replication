@@ -1,0 +1,18 @@
+gene_id,gene_name,growth_ratio,growth_drop,function_category,reaction_count,reactions
+b0008,talB,0.999999999999994,5.9952043329758445e-15,Unknown function,1,['TALA']
+b0030,rihC,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S1),5,"['CYTDH', 'INSH', 'URIH', 'ADNUC', 'XTSNH']"
+b0032,carA,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S3),1,['CBPS']
+b0033,carB,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S4),1,['CBPS']
+b0036,caiD,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S7),2,"['CRNCAR', 'CRNCDH']"
+b0037,caiC,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S8),3,"['CTBTCAL2', 'CRNDCAL2', 'CRNCAL2']"
+b0038,caiB,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S9),2,"['CRNCBCT', 'CRNBTCT']"
+b0040,caiT,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S11),2,"['CRNt7pp', 'CRNt8pp']"
+b0047,kefC,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S18),1,['Kt3pp']
+b0049,apaH,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S20),3,"['AP5AH', 'AP4AH', 'GP4GH']"
+b0061,araD,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein L13),1,['RBP4E']
+b0062,araA,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein L14),1,['ARAI']
+b0063,araB,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein L15),3,"['XYLK2', 'XYLK', 'RBK_L1']"
+b0066,thiQ,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein L18),1,['THMabcpp']
+b0067,thiP,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein L19),1,['THMabcpp']
+b0068,thiB,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein L20),1,['THMabcpp']
+b0070,setA,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein L22),1,['LCTSt3ipp']

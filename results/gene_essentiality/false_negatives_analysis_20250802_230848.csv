@@ -1,0 +1,18 @@
+gene_id,gene_name,growth_ratio,growth_drop,function_category,reaction_count,reactions
+b0008,talB,0.999999999999994,5.9952043329758445e-15,Unknown function,1,[<Reaction TALA at 0x163724a40>]
+b0030,rihC,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S1),5,"[<Reaction CYTDH at 0x1627bdc10>, <Reaction INSH at 0x162f32570>, <Reaction URIH at 0x1637ecb90>, <Reaction ADNUC at 0x1624defc0>, <Reaction XTSNH at 0x16385cad0>]"
+b0032,carA,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S3),1,[<Reaction CBPS at 0x1625ff980>]
+b0033,carB,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S4),1,[<Reaction CBPS at 0x1625ff980>]
+b0036,caiD,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S7),2,"[<Reaction CRNCAR at 0x16277d4c0>, <Reaction CRNCDH at 0x16277ecf0>]"
+b0037,caiC,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S8),3,"[<Reaction CTBTCAL2 at 0x1627bf1a0>, <Reaction CRNDCAL2 at 0x16277f5c0>, <Reaction CRNCAL2 at 0x16277cb60>]"
+b0038,caiB,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S9),2,"[<Reaction CRNCBCT at 0x16277ddc0>, <Reaction CRNBTCT at 0x16277d070>]"
+b0040,caiT,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S11),2,"[<Reaction CRNt7pp at 0x1627be150>, <Reaction CRNt8pp at 0x1627be1e0>]"
+b0047,kefC,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S18),1,[<Reaction Kt3pp at 0x162279610>]
+b0049,apaH,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein S20),3,"[<Reaction AP5AH at 0x1625fd640>, <Reaction AP4AH at 0x1625cff50>, <Reaction GP4GH at 0x162d739e0>]"
+b0061,araD,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein L13),1,[<Reaction RBP4E at 0x163753c20>]
+b0062,araA,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein L14),1,[<Reaction ARAI at 0x16277eed0>]
+b0063,araB,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein L15),3,"[<Reaction XYLK2 at 0x16385e480>, <Reaction XYLK at 0x16385da30>, <Reaction RBK_L1 at 0x163750ce0>]"
+b0066,thiQ,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein L18),1,[<Reaction THMabcpp at 0x1637bd280>]
+b0067,thiP,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein L19),1,[<Reaction THMabcpp at 0x1637bd280>]
+b0068,thiB,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein L20),1,[<Reaction THMabcpp at 0x1637bd280>]
+b0070,setA,0.999999999999994,5.9952043329758445e-15,Translation (ribosomal protein L22),1,[<Reaction LCTSt3ipp at 0x162f33410>]

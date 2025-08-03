@@ -93,9 +93,16 @@ class GeneEssentialityAnalyzer:
         gene_essentiality = {}
         total_genes = len(self.model.genes)
         
+        # Create results directory early
+        os.makedirs('results/gene_essentiality', exist_ok=True)
+        
         for i, gene in enumerate(self.model.genes):
             if i % 100 == 0:
                 print(f"Progress: {i}/{total_genes} genes analyzed")
+                # Save intermediate results every 100 genes
+                if gene_essentiality:
+                    temp_df = pd.DataFrame.from_dict(gene_essentiality, orient='index')
+                    temp_df.to_csv(f'results/gene_essentiality/temp_essentiality_results_{i}.csv')
             
             # Perform knockout
             knockout_growth = self.perform_single_gene_knockout(gene.id)
@@ -117,6 +124,11 @@ class GeneEssentialityAnalyzer:
         
         self.essentiality_results = gene_essentiality
         print(f"Essentiality analysis complete: {len(gene_essentiality)} genes analyzed")
+        
+        # Save final results immediately
+        final_df = pd.DataFrame.from_dict(gene_essentiality, orient='index')
+        final_df.to_csv(f'results/gene_essentiality/gene_essentiality_results_{self.timestamp}.csv')
+        print(f"Results saved to: results/gene_essentiality/gene_essentiality_results_{self.timestamp}.csv")
         
         return gene_essentiality
     
@@ -268,6 +280,12 @@ class GeneEssentialityAnalyzer:
         print(f"  Precision: {precision:.3f}")
         print(f"  Accuracy: {accuracy:.3f}")
         
+        # Save metrics and comparison data immediately
+        with open(f'results/gene_essentiality/metrics_{self.timestamp}.json', 'w') as f:
+            json.dump(metrics, f, indent=2)
+        df.to_csv(f'results/gene_essentiality/comparison_with_orth_2011_{self.timestamp}.csv', index=False)
+        print(f"Metrics and comparison data saved to results/gene_essentiality/")
+        
         return metrics, df
     
     def perform_flux_variability_analysis(self, nonessential_genes, top_n=10):
@@ -330,81 +348,88 @@ class GeneEssentialityAnalyzer:
         """Create visualizations of the essentiality analysis results."""
         print("\nCreating visualizations...")
         
-        # Set up plotting style
-        plt.style.use('default')
-        sns.set_palette("husl")
-        
-        # 1. Top 20 most critical genes (highest growth drop)
-        fig, axes = plt.subplots(2, 2, figsize=(15, 12))
-        
-        # Get top 20 genes by growth drop
-        growth_drops = [(gene_id, result['growth_drop']) 
-                       for gene_id, result in self.essentiality_results.items()]
-        growth_drops.sort(key=lambda x: x[1], reverse=True)
-        top_20 = growth_drops[:20]
-        
-        gene_ids = [x[0] for x in top_20]
-        drops = [x[1] for x in top_20]
-        
-        axes[0, 0].barh(range(len(gene_ids)), drops, color='steelblue')
-        axes[0, 0].set_yticks(range(len(gene_ids)))
-        axes[0, 0].set_yticklabels(gene_ids, fontsize=8)
-        axes[0, 0].set_xlabel('Growth Rate Drop (1/h)')
-        axes[0, 0].set_title('Top 20 Most Critical Genes')
-        axes[0, 0].invert_yaxis()
-        
-        # 2. Essentiality distribution
-        essential_counts = df['our_essential'].value_counts()
-        axes[0, 1].pie(essential_counts.values, labels=['Non-essential', 'Essential'], 
-                      autopct='%1.1f%%', startangle=90)
-        axes[0, 1].set_title('Gene Essentiality Distribution')
-        
-        # 3. Growth ratio distribution
-        axes[1, 0].hist(df['growth_ratio'], bins=50, alpha=0.7, color='lightcoral')
-        axes[1, 0].axvline(x=0.01, color='red', linestyle='--', label='Essentiality Threshold')
-        axes[1, 0].set_xlabel('Growth Ratio (knockout/wild-type)')
-        axes[1, 0].set_ylabel('Number of Genes')
-        axes[1, 0].set_title('Distribution of Growth Ratios')
-        axes[1, 0].legend()
-        
-        # 4. Confusion matrix
-        cm = np.array([[metrics['true_negatives'], metrics['false_positives']],
-                      [metrics['false_negatives'], metrics['true_positives']]])
-        
-        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', 
-                   xticklabels=['Predicted Non-essential', 'Predicted Essential'],
-                   yticklabels=['Actual Non-essential', 'Actual Essential'],
-                   ax=axes[1, 1])
-        axes[1, 1].set_title('Confusion Matrix')
-        
-        plt.tight_layout()
-        plt.savefig(f'results/gene_essentiality/gene_essentiality_analysis_{self.timestamp}.png', 
-                   dpi=300, bbox_inches='tight')
-        plt.show()
-        
-        # 5. Metrics summary plot
-        fig, ax = plt.subplots(figsize=(10, 6))
-        
-        metric_names = ['Sensitivity', 'Specificity', 'Precision', 'Accuracy']
-        metric_values = [metrics['sensitivity'], metrics['specificity'], 
-                        metrics['precision'], metrics['accuracy']]
-        
-        bars = ax.bar(metric_names, metric_values, color=['skyblue', 'lightgreen', 'lightcoral', 'gold'])
-        ax.set_ylabel('Score')
-        ax.set_title('Prediction Performance Metrics')
-        ax.set_ylim(0, 1)
-        
-        # Add value labels on bars
-        for bar, value in zip(bars, metric_values):
-            ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.01,
-                   f'{value:.3f}', ha='center', va='bottom')
-        
-        plt.tight_layout()
-        plt.savefig(f'results/gene_essentiality/performance_metrics_{self.timestamp}.png', 
-                   dpi=300, bbox_inches='tight')
-        plt.show()
-        
-        print("Visualizations saved to results/gene_essentiality/")
+        try:
+            # Set up plotting style
+            plt.style.use('default')
+            sns.set_palette("husl")
+            
+            # 1. Top 20 most critical genes (highest growth drop)
+            fig, axes = plt.subplots(2, 2, figsize=(15, 12))
+            
+            # Get top 20 genes by growth drop
+            growth_drops = [(gene_id, result['growth_drop']) 
+                           for gene_id, result in self.essentiality_results.items()]
+            growth_drops.sort(key=lambda x: x[1], reverse=True)
+            top_20 = growth_drops[:20]
+            
+            gene_ids = [x[0] for x in top_20]
+            drops = [x[1] for x in top_20]
+            
+            axes[0, 0].barh(range(len(gene_ids)), drops, color='steelblue')
+            axes[0, 0].set_yticks(range(len(gene_ids)))
+            axes[0, 0].set_yticklabels(gene_ids, fontsize=8)
+            axes[0, 0].set_xlabel('Growth Rate Drop (1/h)')
+            axes[0, 0].set_title('Top 20 Most Critical Genes')
+            axes[0, 0].invert_yaxis()
+            
+            # 2. Essentiality distribution
+            essential_counts = df['our_essential'].value_counts()
+            axes[0, 1].pie(essential_counts.values, labels=['Non-essential', 'Essential'], 
+                          autopct='%1.1f%%', startangle=90)
+            axes[0, 1].set_title('Gene Essentiality Distribution')
+            
+            # 3. Growth ratio distribution
+            axes[1, 0].hist(df['growth_ratio'], bins=50, alpha=0.7, color='lightcoral')
+            axes[1, 0].axvline(x=0.01, color='red', linestyle='--', label='Essentiality Threshold')
+            axes[1, 0].set_xlabel('Growth Ratio (knockout/wild-type)')
+            axes[1, 0].set_ylabel('Number of Genes')
+            axes[1, 0].set_title('Distribution of Growth Ratios')
+            axes[1, 0].legend()
+            
+            # 4. Confusion matrix
+            cm = np.array([[metrics['true_negatives'], metrics['false_positives']],
+                          [metrics['false_negatives'], metrics['true_positives']]])
+            
+            sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', 
+                       xticklabels=['Predicted Non-essential', 'Predicted Essential'],
+                       yticklabels=['Actual Non-essential', 'Actual Essential'],
+                       ax=axes[1, 1])
+            axes[1, 1].set_title('Confusion Matrix')
+            
+            plt.tight_layout()
+            plt.savefig(f'results/gene_essentiality/gene_essentiality_analysis_{self.timestamp}.png', 
+                       dpi=300, bbox_inches='tight')
+            plt.close()  # Close to free memory
+            print(f"Main analysis plot saved: gene_essentiality_analysis_{self.timestamp}.png")
+            
+            # 5. Metrics summary plot
+            fig, ax = plt.subplots(figsize=(10, 6))
+            
+            metric_names = ['Sensitivity', 'Specificity', 'Precision', 'Accuracy']
+            metric_values = [metrics['sensitivity'], metrics['specificity'], 
+                            metrics['precision'], metrics['accuracy']]
+            
+            bars = ax.bar(metric_names, metric_values, color=['skyblue', 'lightgreen', 'lightcoral', 'gold'])
+            ax.set_ylabel('Score')
+            ax.set_title('Prediction Performance Metrics')
+            ax.set_ylim(0, 1)
+            
+            # Add value labels on bars
+            for bar, value in zip(bars, metric_values):
+                ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.01,
+                       f'{value:.3f}', ha='center', va='bottom')
+            
+            plt.tight_layout()
+            plt.savefig(f'results/gene_essentiality/performance_metrics_{self.timestamp}.png', 
+                       dpi=300, bbox_inches='tight')
+            plt.close()  # Close to free memory
+            print(f"Performance metrics plot saved: performance_metrics_{self.timestamp}.png")
+            
+            print("✅ All visualizations saved to results/gene_essentiality/")
+            
+        except Exception as e:
+            print(f"❌ Error creating visualizations: {e}")
+            print("Data files are still saved - you can create visualizations manually")
     
     def save_results(self, metrics, df, fva_results):
         """Save all results to files."""
